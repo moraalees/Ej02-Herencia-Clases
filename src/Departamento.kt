@@ -9,9 +9,10 @@ class Departamento(val listaEmpleados: MutableList<Empleado> = mutableListOf()) 
     fun calculaSalarioTotal(){
         var total = 0.0
         for (empleado in listaEmpleados){
+            val salario = String.format("%.2f", empleado.calculaSalario())
             total += empleado.calculaSalario()
-            println("${empleado.nombre} con ID--${empleado.id} tiene un salario de ${empleado.calculaSalario()} al mes.")
+            println("${empleado.nombre} con ID--${String.format("%04d", empleado.id)} tiene un salario de ${salario} al mes.")
         }
-        println("El total de salario entre todos los empleados es de $total€")
+        println("El total de salario entre todos los empleados es de ${String.format("%.2f", total)}€")
     }
 }

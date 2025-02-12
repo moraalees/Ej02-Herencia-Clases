@@ -1,6 +1,6 @@
 package src
 
-class EmpleadoPorHora(nombre: String, id: String, val horasMensuales: Int, val tarifaPorHora: Double): Empleado(nombre, id) {
+class EmpleadoPorHora(nombre: String, id: Int, val horasMensuales: Int, val tarifaPorHora: Double): Empleado(nombre, id) {
     init{
         require(horasMensuales in 1..730){"Las horas no deben ser menores que 1 o mayores que 730..."}
     }
